@@ -33,6 +33,7 @@ class TriviaGameBackendPipelineStack extends cdk.Stack {
         const dockerImageSourceAction = new ecr.PipelineSourceAction(this, 'BaseImage', {
             stage: sourceStage,
             repository: baseImageRepo,
+            imageTag: 'release',
             outputArtifactName: 'BaseImage'
         });
 
