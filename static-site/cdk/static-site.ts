@@ -16,7 +16,7 @@ export class StaticSite extends cdk.Construct {
         const siteDomain = props.siteSubDomain + '.' + props.domainName;
 
         // Content bucket
-        const siteBucket = new s3.Bucket(this, 'SiteBucket', {
+        const siteBucket = new s3.Bucket(this, 'sitebucket', {
             bucketName: siteDomain,
             websiteIndexDocument: 'index.html',
             websiteErrorDocument: 'error.html',

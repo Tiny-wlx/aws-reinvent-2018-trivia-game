@@ -11,7 +11,7 @@ class TriviaGameInfrastructureStack extends cdk.Stack {
     constructor(parent: cdk.App, name: string, props: TriviaGameInfrastructureStackProps) {
         super(parent, name, props);
 
-        new StaticSite(this, 'StaticSite', {
+        new StaticSite(this, 'staticsite', {
             domainName: props.domainName,
             siteSubDomain: props.siteSubDomain
         });
@@ -21,10 +21,10 @@ class TriviaGameInfrastructureStack extends cdk.Stack {
 const app = new cdk.App();
 new TriviaGameInfrastructureStack(app, 'TriviaGameStaticSiteInfraTest', {
     domainName: 'l1181.com',
-    siteSubDomain: 'test'
+    siteSubDomain: 'dev'
 });
 new TriviaGameInfrastructureStack(app, 'TriviaGameStaticSiteInfraProd', {
     domainName: 'l1181.com',
-    siteSubDomain: 'www'
+    siteSubDomain: 'prod'
 });
 app.run();
