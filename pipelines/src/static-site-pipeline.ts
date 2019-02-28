@@ -28,11 +28,11 @@ class TriviaGameStaticSitePipeline extends cdk.Stack {
 
         // Test
         const testStage = pipeline.addStage('Test');
-        this.addBuildAction(testStage, 'Test', 'test', 'test.l1181.com', source.outputArtifact);
+        this.addBuildAction(testStage, 'Test', 'test', 'dev.l1181.com', source.outputArtifact);
 
         // Prod
         const prodStage = pipeline.addStage('Prod');
-        this.addBuildAction(prodStage, 'Prod', 'prod', 'www.l1181.com', source.outputArtifact);
+        this.addBuildAction(prodStage, 'Prod', 'prod', 'prod.l1181.com', source.outputArtifact);
     }
 
     private addBuildAction(stage: codepipeline.Stage, stageName: string, buildTarget: string, websiteBucket: string, input: codepipelineApi.Artifact) {
